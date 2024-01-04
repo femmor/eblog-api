@@ -22,6 +22,11 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 // Routes
+app.get("/api/v1", (req, res) => {
+  return res.status(200).json({
+    message: "Welcome to Eblog API!",
+  });
+});
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/post", postRoutes);
 
